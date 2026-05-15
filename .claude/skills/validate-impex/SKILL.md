@@ -49,6 +49,28 @@ find impex/ -name "*.xml" -exec xmllint --noout {} \;
 - Missing XML declaration
 - Invalid attribute quotes
 
+### XSD schema validation (preferred)
+
+Validate against the bundled SFCC XSD schemas — this catches namespace, structural, and type errors that plain well-formedness misses. The `b2c` CLI ships the schemas; use `npx @salesforce/b2c-cli` if it's not installed globally.
+
+```bash
+# List bundled schemas
+b2c docs schema --list
+
+# Validate site preferences and custom object metadata
+xmllint --schema "$(b2c docs schema metadata --path)" \
+  impex/install/meta/system-objecttype-extensions.xml --noout
+xmllint --schema "$(b2c docs schema metadata --path)" \
+  impex/install/meta/custom-objecttype-definitions.xml --noout
+
+# Validate services
+xmllint --schema "$(b2c docs schema services --path)" impex/install/services.xml --noout
+xmllint --schema "$(b2c docs schema services --path)" impex/uninstall/services.xml --noout
+
+# Validate preferences
+xmllint --schema "$(b2c docs schema preferences --path)" impex/install/preferences.xml --noout
+```
+
 ## Step 3: Validate services.xml
 
 ### Installation file (`impex/install/services.xml`)
