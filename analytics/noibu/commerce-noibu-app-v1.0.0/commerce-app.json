@@ -1,0 +1,13 @@
+{
+    "id": "noibu",
+    "name": "Noibu",
+    "description": "Loads Noibu session monitoring script on every storefront page",
+    "domain": "analytics",
+    "version": "1.0.0",
+    "publisher": {
+        "name": "Noibu",
+        "url": "https://noibu.com",
+        "support": "https://noibu.com"
+    },
+    "dependencies": {}
+}
