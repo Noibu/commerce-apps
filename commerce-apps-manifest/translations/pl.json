@@ -26,5 +26,9 @@
     "noibu": {
         "name": "Noibu",
         "description": "Loads Noibu session monitoring script on every storefront page"
+    },
+    "custom-analytics": {
+        "name": "Analityka niestandardowa",
+        "description": "Skonfiguruj niestandardową integrację analityki, podając własne interfejsy API."
     }
 }
