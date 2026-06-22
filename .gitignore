@@ -84,4 +84,3 @@ $RECYCLE.BIN/
 **/commerce-*-app-*/
 
 # Noibu fork: track the Noibu app source directory
-!analytics/noibu/commerce-noibu-app-v*/
